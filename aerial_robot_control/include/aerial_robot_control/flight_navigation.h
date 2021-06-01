@@ -441,11 +441,15 @@ namespace aerial_robot_navigation
         {
           if(msg->data == 0)
             {
+              setTargetXyFromCurrentState();
+              target_acc_.setValue(0, 0, 0);
               xy_control_mode_ = POS_CONTROL_MODE;
               ROS_INFO("x/y position control mode");
             }
           if(msg->data == 1)
             {
+              target_vel_.setValue(0, 0, 0);
+              target_acc_.setValue(0, 0, 0);
               xy_control_mode_ = VEL_CONTROL_MODE;
               ROS_INFO("x/y velocity control mode");
             }
