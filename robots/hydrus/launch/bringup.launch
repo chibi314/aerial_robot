@@ -97,4 +97,9 @@
     <arg name="spawn_yaw" value="$(arg spawn_yaw)" />
   </include>
 
+  # topic delay
+  <node pkg="hydrus" name="topic_delay_relay" type="topic_delay_relay.py">
+    <param name="delay_count" value="20"/>
+  </node>
+
 </launch>
